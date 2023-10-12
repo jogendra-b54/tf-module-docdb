@@ -1,0 +1,3 @@
+docdb:
+    source:  "https://github.com/jogendra-b54/tf-module-docdb.git"
+    version: "main"
