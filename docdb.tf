@@ -13,7 +13,7 @@ resource "aws_docdb_cluster" "docdb" {
 
 
 # creates subnet group
-resource "aws_db_subnet_group" "docdb_subnet_group" {
+resource "aws_docdb_subnet_group" "docdb_subnet_group" {
   name                = "roboshop-docdb-${var.ENV}-subnetgroup"
   subnet_ids          = [ data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS ]
 
