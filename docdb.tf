@@ -5,7 +5,7 @@ resource "aws_docdb_cluster" "docdb" {
   master_password         = "roboshop1"
   skip_final_snapshot     = true
 
-  vpc_security_group_ids  =  
+  vpc_security_group_ids  =  [aws_security_group.allows_docdb.id]
   db_subnet_group_name    =  aws_db_subnet_group.docdb_subnet_group.name
 }
 
