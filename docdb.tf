@@ -9,7 +9,7 @@ resource "aws_docdb_cluster" "docdb" {
   db_subnet_group_name    =  aws_docdb_subnet_group.docdb_subnet_group.name
 }
 
-# in which VPC , in which subnet it has to be created is not mentioned
+
 
 
 # creates subnet group
