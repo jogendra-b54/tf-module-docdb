@@ -1,8 +1,8 @@
 resource "aws_docdb_cluster" "docdb" {
   cluster_identifier      = "roboshop-${var.ENV}-docdb"
   engine                  = "docdb"
-  master_username         = jsondecode(data.aws_secretsmanager_secret_version.secret_version.secret_string)["DOCDB_USERNAME"]
-  master_password         = jsondecode(data.aws_secretsmanager_secret_version.secret_version.secret_string)["DOCDB_PASSWORD"]
+  master_username         = locals.DOCDB_USER
+  master_password         = locals.DOCDB_PASS
   skip_final_snapshot     =  true
 
   vpc_security_group_ids  =  [aws_security_group.allows_docdb.id]
