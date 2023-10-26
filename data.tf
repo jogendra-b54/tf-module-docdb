@@ -11,7 +11,7 @@
  }
 
 
-data "aws_secretsmanager_secret" "by-name" {
+data "aws_secretsmanager_secret" "secrets" {
   name = "robot/secrets"
 }
 
