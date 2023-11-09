@@ -5,5 +5,9 @@ resource "aws_route53_record" "mongodb_dns_record" {
   ttl     = 10
   records = [aws_docdb_cluster.docdb.endpoint]
 }
+  output "MONGODB_ENDPOINT" {
+  value =  aws_docdb_cluster.docdb.endpoint
+  }
+
 
   
