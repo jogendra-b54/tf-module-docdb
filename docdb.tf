@@ -44,9 +44,18 @@ resource "aws_docdb_cluster" "docdb" {
   master_username         = "admin1"
   master_password         = "roboshop1"
   skip_final_snapshot     =  true
-
-  #vpc_security_group_ids  =  [aws_security_group.allows_docdb.id]
-  #db_subnet_group_name    =  aws_docdb_subnet_group.docdb_subnet_group.name
+  
+  vpc_security_group_ids  =  [aws_security_group.allows_docdb.id]
+  db_subnet_group_name    =  aws_docdb_subnet_group.docdb_subnet_group.name
 }
 
+#Creates compute machines needed for DocumentDB
+resource "aws_docdb_cluster_instance" "cluster_instances" {
+    count   =  1
+    identifier = "roboshop-${var.ENV}-docdb-instance"
+    cluster_identifier =   aws_docdb_cluster.docdb.id
+  instance_class = "db.r5.large"
+
+  depends_on = [aws_docdb_cluster.docdb]
+}
 
