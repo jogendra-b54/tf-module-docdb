@@ -1,3 +1,4 @@
+/*
 resource "aws_security_group" "allows_docdb" {
   name        = "roboshop allows_docdb_internal only"
   description = "allows_docdb_internal only"
@@ -29,4 +30,4 @@ resource "aws_security_group" "allows_docdb" {
   tags = {
     Name = "roboshop-${var.ENV}-docdb-sg"
   }
-}
+}*/
