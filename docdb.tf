@@ -57,7 +57,7 @@ resource "aws_docdb_subnet_group" "docdb_subnet_group" {
     Name = "roboshop-docdb-${var.ENV}-subnetgroup"
   }
 }
-Creates compute machines needed for DocumentDB
+#Creates compute machines needed for DocumentDB
 resource "aws_docdb_cluster_instance" "cluster_instances" {
     count   =  1
     identifier = "roboshop-${var.ENV}-docdb-instance"
