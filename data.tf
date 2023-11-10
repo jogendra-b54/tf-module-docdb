@@ -10,7 +10,7 @@
    
  }
 
-/*
+
 data "aws_secretsmanager_secret" "secrets" {
   name = "robot/secrets"
 }
@@ -19,7 +19,7 @@ data "aws_secretsmanager_secret" "secrets" {
 data "aws_secretsmanager_secret_version" "secret_version" {
   secret_id     = data.aws_secretsmanager_secret.secrets.id 
 }
-*/
+
 # output "example" {
 #   value = jsondecode(data.aws_secretsmanager_secret_version.secret_version.secret_string)["DOCDB_USERNAME"]
 # }
