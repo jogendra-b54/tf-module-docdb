@@ -1,5 +1,5 @@
 # This is going to  inject the schema to DocDB
-/*
+
 resource "null_resource" "docdb_schema" {
        
   depends_on = [aws_docdb_cluster.docdb , aws_docdb_cluster_instance.cluster_instances]
@@ -16,4 +16,4 @@ resource "null_resource" "docdb_schema" {
             mongo --ssl --host ${aws_docdb_cluster.docdb.endpoint} --sslCAFile /tmp/global-bundle.pem --username admin1 --password roboshop1  < users.js
         EOF 
     }
-}*/
+}
